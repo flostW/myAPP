@@ -1,34 +1,57 @@
 <DOCTYPRE html>  
-    <html>  
+    <html>
+       
+
         <head>  
-            <title>  
-                跳马  
-            </title>  
-      
-        </head>  
+             <title>  
+                JumpingHorse  
+             </title>    
+        </head>
+        <style>
+            .nav{
+               color:black;
+               border-width:3px;  
+               border-style: solid;
+               border-left-color:black;
+               border-top-color:black;
+               border-right-color:black;
+               border-bottom-color: black;
+
+                /* border-color: blue;*/
+               width: 80px;
+               height: 40px;
+               background-color: wheat;
+            }
+
+        
+        </style>
+
             <body>     
-                <!输入框设计>  
+                
                 <form action="/test.php" method="get">  
-                        跳马  
-                        <br><br><br>  
-                          
-                        棋盘坐标系：行为y轴，列为x轴<br>  
-                        棋盘行列说明：如3*4指   3行格子*4列格子，若理解为线条为4行线条*5列线条<br>  
-                        输入数据说明：为了您使用体验，请勿输入过大数据，这里我们的限制为10*10  
+                        <a style="color:#000;font-size:20px;font-family:微软雅黑"><strong>JumpingHorse</strong></a><br>
+  
+                        <br><br>
+                        <a style="font-family:微软雅黑"><strong>棋盘说明如下</strong></a><br><br>
+                        <a style="font-family:微软雅黑">1.棋盘坐标系：行为y轴，列为x轴</a><br>
+                        <a style="font-family:微软雅黑">2.输入数据不超过10*10 </a><br>
+                         
                         
+                        <br>     
                         <br>  
-                        <hr>  
-                        棋盘设计:  
+                        <a style="font-family:幼圆;color:blue">棋盘行数:</a>
+                        <input type="number" name="row" id="row"  min="0" max="10" />  
+                        <a style="font-family:幼圆;color:blue">棋盘列数:</a>
+                        <input type="number" name="column" id="column"  min="0" max="10"/>    
+                        <br>
+                        <a style="font-family:幼圆;color:blueviolet">最初点:</a> 
                         <br>  
-                        棋盘行数:<input type="number" name="row" id="row"  min="0" max="10" />  
-                        棋盘列数:<input type="number" name="column" id="column"  min="0" max="10"/>  
-                        <hr>  
-                        原始起跳点:  
+                        <a style="font-family:幼圆;color:blue">起跳点横坐标:</a>
+                        <input type="number" name="fromRow" id="fromRow"  min="0" max="10" />  
+                        <a style="font-family:幼圆;color:blue">起跳点纵坐标:</a>
+                        <input type="number" name="fromColumn" id="fromColumn"  min="0" max="10"/>  
                         <br>  
-                        起跳点所在行:<input type="number" name="fromRow" id="fromRow"  min="0" max="10" />  
-                        起跳点所在列:<input type="number" name="fromColumn" id="fromColumn"  min="0" max="10"/>  
-                        <br>  
-                        <input type="submit" value="确定" onclick="main()"/>  
+                        <input type="submit" value="finish" onclick="main()"/>  
                     </form>  
   
   
@@ -132,7 +155,7 @@
                           
   
                         if(MAX_X>10 || MAX_Y>10 || a>10 ||b>10 || (a+1)>MAX_X || (b+1)>MAX_Y){  
-                          document.write("拒绝服务！请按照规范输入数据");  
+                          document.write("请按照规范再次输入数据");  
                         }  
                         var xy=new Array(MAX_Y+1);  
                         for(var i=0;i<MAX_Y+1;i++){  
@@ -147,11 +170,11 @@
                         Jump(MAX_X, MAX_Y,0, 0, 1,xy);  
                         document.write("总方案数"+ num);      
                         if(num==0){  
-                            document.write("没有唉!!!");  
+                            document.write("没有找到");  
                         }  
                     }  
   
                 </script>  
             </body>  
     </html>  
-</DOCTYPRE>
+</DOCTYPRE>  
